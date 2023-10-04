@@ -1,0 +1,17 @@
+.movieContainer {
+    padding: 2em;
+}
+.movieBox {
+    background-color: #230052;
+    padding: 1.5em;
+    border-radius: 15px;
+}
+.movieTitle {
+    color: yellow;
+    text-align: center;
+    font-size: 40px;
+}
+.movieDescription {
+    color: white;
+    text-align: justify;
+}
