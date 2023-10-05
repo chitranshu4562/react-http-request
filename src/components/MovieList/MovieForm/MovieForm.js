@@ -2,7 +2,6 @@ import classes from './MovieForm.module.css';
 import Card from "../../UI/Card/Card";
 import Button from "../../UI/Button/Button";
 import React, {useState} from "react";
-import axios from "axios";
 
 const MovieForm = (props) => {
     const [name, setName] = useState('');
