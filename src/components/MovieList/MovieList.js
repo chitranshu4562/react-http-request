@@ -13,6 +13,7 @@ const MovieList = (props) => {
     const [error, setError] = useState(null);
     const [movieFormVisibilityFlag, setMovieFormVisibilityFlag] = useState(false);
     const fetchMoviesHandler = () => {
+        setMovieList([]);
         setIsLoading(true);
         setError(null);
         axios.get('https://react-http-requests-9dcb8-default-rtdb.firebaseio.com/movies.json')
