@@ -35,5 +35,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-transform-remove-imports": "^1.7.0"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env", "@babel/preset-react"],
+    "plugins": ["babel-plugin-transform-remove-imports"]
   }
 }
