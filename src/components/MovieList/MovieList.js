@@ -66,7 +66,7 @@ const MovieList = (props) => {
         </Card>
         {movieFormVisibilityFlag && <MovieForm classes={classes.animatedCard} onAddMovie={addNewMovieHandler} />}
         {isLoading && <Loader/>}
-        {!!error && <Error message={error}/>}
+        {!!error && <Error message={error} classes={classes.animatedCard}/>}
         {(movieList.length > 0 || !isLoading) && movieList.map(movie => (
             <Movie key={movie.id} name={movie.name} description={movie.description} classes={classes.animatedCard}/>
         ))}
