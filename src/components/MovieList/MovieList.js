@@ -23,7 +23,7 @@ const MovieList = (props) => {
                         id: key, ...response.data[key]
                     })
                 }
-                setMovieList(handledMoviesData);
+                setMovieList(handledMoviesData.reverse());
                 setIsLoading(false);
             })
             .catch(error => {
@@ -41,7 +41,7 @@ const MovieList = (props) => {
             .then(response => {
                 const addedMovie = {id: response.data.name, ...JSON.parse(response.config.data)}
                 setMovieList(prevState => {
-                    return [...prevState, addedMovie]
+                    return [addedMovie, ...prevState]
                 })
                 setIsLoading(false);
             })
@@ -67,7 +67,7 @@ const MovieList = (props) => {
         {movieFormVisibilityFlag && <MovieForm classes={classes.animatedCard} onAddMovie={addNewMovieHandler} />}
         {isLoading && <Loader/>}
         {!!error && <Error message={error}/>}
-        {(movieList.length > 0 && !isLoading) && movieList.map(movie => (
+        {(movieList.length > 0 || !isLoading) && movieList.map(movie => (
             <Movie key={movie.id} name={movie.name} description={movie.description} classes={classes.animatedCard}/>
         ))}
     </React.Fragment>
