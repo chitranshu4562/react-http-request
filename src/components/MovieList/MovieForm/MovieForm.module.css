@@ -13,3 +13,6 @@
 .btn:hover {
     background-color: #460897;
 }
+.disabledButton {
+    opacity: 0.6;
+}

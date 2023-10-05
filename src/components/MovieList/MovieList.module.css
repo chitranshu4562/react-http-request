@@ -9,7 +9,23 @@
     padding: 0.5em 3.5em;
     font-family: sans-serif;
     font-size: 1.2em;
+    margin: auto 5px;
 }
 .btn:hover {
     background-color: #460897;
+}
+.animatedCard {
+    animation-name: cardAnimation;
+    animation-duration: 1.5s;
+}
+@keyframes cardAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
