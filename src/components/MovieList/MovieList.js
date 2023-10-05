@@ -36,6 +36,7 @@ const MovieList = (props) => {
     const addNewMovieHandler = (newMovieData) => {
         setIsLoading(true);
         setMovieFormVisibilityFlag(false);
+        setError(null);
         axios.post('https://react-http-requests-9dcb8-default-rtdb.firebaseio.com/movies.json', newMovieData)
             .then(response => {
                 const addedMovie = {id: response.data.name, ...JSON.parse(response.config.data)}
@@ -45,11 +46,13 @@ const MovieList = (props) => {
                 setIsLoading(false);
             })
             .catch(error => {
+                setError(error.message);
                 console.error(error);
                 setIsLoading(false);
             })
     }
     const displayMovieFormHandler = () => {
+        setError(null);
         if (movieFormVisibilityFlag) {
             setMovieFormVisibilityFlag(false);
         } else {
