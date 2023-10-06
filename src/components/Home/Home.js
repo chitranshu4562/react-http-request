@@ -6,7 +6,7 @@ const Home = (props) => {
     return (
         <div className={classes.homeContainer}>
            <Card classes={classes.cardInputText}>
-               Welcome to Movie App
+               Welcome to World of Movies
            </Card>
             <MovieList/>
         </div>
